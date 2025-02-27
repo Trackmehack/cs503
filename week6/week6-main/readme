@@ -1,0 +1,52 @@
+Muhammad Farooq
+CS 503 Systems
+Assignment: Custom Shell Part 2
+02/14/2025
+
+1 .Why do we use fork/execvp instead of just calling execvp directly? What value does fork provide?
+
+We use fork/execvp instead of just calling execvp directly because it creates a new child process . This then allows the parent process to continue running independently. The value the fork provides is process isolation. This means the parent can manage multiple processes concurrently.
+
+
+2. What happens if the fork() system call fails? How does your implementation handle this scenario?
+If the fork() system call fails this causes it to return-1, and no child process is created. My implementation handles this scenario by printing an error message and then the next step will be to exit the function.
+
+3. How does execvp() find the command to execute? What system environment variable plays a role in this process?
+
+The  execvp() finds  the command to execute by searching through directories that are listed in the Path environment variable. The system environment variable  that plays a role in this process is Path. 
+
+4. What is the purpose of calling wait() in the parent process after forking? What would happen if we didn’t call it?
+ The purpose of calling wait() in the parent process after forking is to ensure that the parent process waits for the child process to be completed before moving on. If we did not call it than it will cause the parent to exit early making the child as a zombie process
+
+
+5. In the referenced demo code, we used WEXITSTATUS(). What information does this provide, and why is it important?
+
+The information this provides is to get the exit status of a child process. This will let us know if the process failed or succeeded.  This is important because it helps determine the outcome of the child process execution 
+
+
+6. Describe how your implementation of build_cmd_buff() handles quoted arguments. Why is this necessary?
+
+
+My implementation of build_cmd_buff() handles quoted arguments by treating quoted texts like it was a single argument which then preserves the spaces inside the quotes. This is necessary because it's the right way to handle multi-word arguments  that are inside of the quotes.
+
+7. What changes did you make to your parsing logic compared to the previous assignment? Were there any unexpected challenges in refactoring your old code?
+
+
+ The changes that I  made to my parsing logic compared to the previous assignment was to handle quoted strings which helped prevent the spaces from spliting. There were many unexpected challenges in refactoring the old code. 
+
+
+8. What is the purpose of signals in a Linux system, and how do they differ from other forms of interprocess communication (IPC)?
+
+The purpose of signals in a Linux system was to notify processes of events . This included events like errors or termination requests . This was different from other forms of interprocess communication (IPC) because this involves more structured data exchange
+
+
+9. Find and describe three commonly used signals (e.g., SIGKILL, SIGTERM, SIGINT). What are their typical use cases?
+
+ The three commonly used signals (e.g., SIGKILL, SIGTERM, SIGINT).
+The SIGKILL:  gets rid of a process immediately; The SIGTERM is the one that ends process in a graceful way, SIGINT is the one that stops the process by clicking on control and c at the same time which Interrupts a process.
+
+
+10. What happens when a process receives SIGSTOP? Can it be caught or ignored like SIGINT? Why or why not?
+
+
+When a process receives SIGSTOP it causes the process to pause. This cannot be caught or ignored like SIGINT. This is because SIGSTOP is a low-level signal .

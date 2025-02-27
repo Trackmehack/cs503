@@ -1,0 +1,13 @@
+# Text Line Processor Utility
+
+This program processes strings based on the provided command-line options:
+- `-h`: Prints help.
+- `-c`: Counts the number of words in the input string.
+- `-r`: Reverses the input string.
+- `-w`: Prints each word in the string and its length.
+
+## Compilation
+To compile the program, run:
+
+```bash
+gcc -o stringfun test.c
