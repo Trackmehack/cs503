@@ -1,0 +1,16 @@
+How does the remote client know when a command’s output is done?
+ It keeps reading until it gets a special signal, reaches a set length, or no more data comes.
+
+How does a networked shell mark the start and end of a command in TCP?
+ It uses markers, message size, or fixed-length messages. Without this, messages can get mixed up.
+
+What is the difference between stateful and stateless protocols?
+
+Stateful: Remembers past actions (like logging into a bank).
+Stateless: Each request is separate (like opening a website).
+Why use UDP if it is "unreliable"?
+ It is fast, simple, and great for games, videos, and live chats.
+
+
+What does the OS provide for network communication?
+ Sockets, which let programs send and receive data over a network.
