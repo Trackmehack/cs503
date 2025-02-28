@@ -1,3 +1,9 @@
+Muhammad Farooq
+Week 7 - Drexel Shell Part 3
+Cs 503
+02/27/2025
+
+
 How does the remote client know when a command’s output is done?
  It keeps reading until it gets a special signal, reaches a set length, or no more data comes.
 
