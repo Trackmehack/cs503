@@ -1,0 +1,20 @@
+Muhammad Farooq
+Cs 503
+Week 8 assignment
+03/ 01/2025
+
+How does the remote client determine when a command's output is fully received from the server, and what techniques can be used to handle partial reads or ensure complete message transmission?
+The client checks for delimiters, message length, or timeouts and handles partial reads with buffering.
+
+This week's lecture on TCP explains that it is a reliable stream protocol rather than a message-oriented one. Since TCP does not preserve message boundaries, how should a networked shell protocol define and detect the beginning and end of a command sent over a TCP connection? What challenges arise if this is not handled correctly?
+A shell protocol uses delimiters or headers to mark commands, and without this, data can be split or combined wrong.
+
+Describe the general differences between stateful and stateless protocols.
+The general differences between stateful and stateless protocols are that stateful protocols remember past data, while stateless ones treat each request separately.
+
+Our lecture this week stated that UDP is "unreliable". If that is the case, why would we ever use it?
+We would use it because UDP is fast and good for streaming, gaming, and DNS, even if some data is lost.
+
+What interface/abstraction is provided by the operating system to enable applications to use network communications?
+THe interface/abstraction which is provided by the operating system to enable applications to use network communications is the OS provides sockets to let applications communicate over a network.
+
